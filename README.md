@@ -5,6 +5,8 @@ complete game</h2>
 
 <h2>Current Objectives<h2>
 
-<h4>Clean up CSS and add structuring classes to css<h4>
+<h4>Implement custom css styling in html<h4>
 <h4>Finish rest of site pages<h4>
 <h4>Upload first phaser game<h4>
+<h4>Restructure file directory and change file names to improve search
+indexing<h4>
