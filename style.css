@@ -82,17 +82,31 @@ body {
 
 
 footer {
-    text-align: center;
+    text-align: unset;
     width: 100%;
     height: 50px;
-    /* background-color: black; */
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+footer h3 {
+    margin: 0px;
+    position: sticky;
 }
 
 /* #############Games Area############## */
 
-.single-game {
+.row img {
+    display: block;
+    margin: 50px;
+    padding: 0px;
+}
+
+h2, h3 {
     text-align: center;
-    margin-bottom: 32px;
 }
 
 /* ######## Responsive ################# */
