@@ -15,6 +15,14 @@ body {
     margin: 0px;
 }
 
+.gameButtons {
+    display: block;
+    text-align: center;
+}
+.gameButtons button {
+    
+}
+
 
 /* Custom Structuring  */
 .row {
@@ -80,21 +88,51 @@ body {
 
 
 
+/* Footer bar */
+.footerTop {
+    margin: 0px;
+    padding: 0px;
+    color: #00FF33;
+    border: 1px solid #00FF33;
+}
 
-footer {
-    text-align: unset;
-    width: 100%;
+
+
+#sticky-footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
     height: 50px;
-    background-color: blue;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
+    width: 100%;
+    background: #000000;
+}
+
+footer .comName {
+    padding-top: 14px;
+    padding-left: 20px;
+    float: left;
 }
 
 footer h3 {
     margin: 0px;
-    position: sticky;
+}
+
+.footerOptions {
+    float: right;
+}
+
+/* Footer User Command Bar  */
+.footerOptions ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+
+}
+
+.footerOptions ul li {
+    display: inline-block;
+    padding: 16px;
+    text-align: center;
 }
 
 /* #############Games Area############## */
