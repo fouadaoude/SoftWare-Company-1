@@ -20,7 +20,18 @@ body {
     text-align: center;
 }
 .gameButtons button {
-    
+    background-color: #000000;
+    font-size: larger;
+    font-family: bit, "sans-serif";
+    text-decoration: none;
+    color: #00FF33;
+    border: 1px solid #00FF33;
+    padding: 12px;
+}
+
+.gameButtons button a {
+    color: #00FF33;
+    text-decoration: none;
 }
 
 
