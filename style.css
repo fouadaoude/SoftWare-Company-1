@@ -119,6 +119,15 @@ button.defaultButton:hover {
     transition: background-color 0.3s;
 }
 
+.nav a {
+    text-decoration: none;
+}
+
+.nav li {
+    color: #00FF33;
+    text-decoration: none;
+}
+
 .nav ul li:hover {
     background-color: #282828;
     color: #33FF00;
@@ -160,6 +169,7 @@ footer h3 {
     float: right;
 }
 
+
 /* Footer User Command Bar  */
 .footerOptions ul {
     padding: 0px;
@@ -178,8 +188,8 @@ footer h3 {
 
 .row img {
     display: block;
-    margin: 50px;
-    padding: 0px;
+    margin: auto;
+    padding-top: 50px;
 }
 
 h2, h3 {

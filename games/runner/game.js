@@ -2,7 +2,7 @@
 let gameScene = new Phaser.Scene("Game");
 
 // initiate scene parameters
-gameScene.init = function() {
+gameScene.init = function () {
 	// player speed
 	this.playerSpeed = 3;
 
@@ -16,34 +16,34 @@ gameScene.init = function() {
 };
 
 // load assets
-gameScene.preload = function() {
+gameScene.preload = function () {
 	// load images
-	this.load.image("background", "assets/background.png");
-	this.load.image("player", "assets/player.png");
-	this.load.image("enemy", "assets/enemy.png");
-	this.load.image("weapon", "assets/weapon.png");
+	this.load.image("background", "background.png");
+	this.load.image("player", "player.png");
+	this.load.image("enemy", "enemy.png");
+	this.load.image("weapon", "weapon.png");
 };
 
 // called once after the preload ends
-gameScene.create = function() {
+gameScene.create = function () {
 	// create bg sprite
-    let bg = this.add.sprite(0, 0, "background");
-    bg.setPosition(320, 150);
-    bg.setScale(2.8);
+	let bg = this.add.sprite(0, 0, "background");
+	bg.setPosition(320, 150);
+	bg.setScale(2.8);
 
 	// create the player
-    this.player = this.add.sprite(0, 0, 'player');
-    this.player.setPosition(20, 180);
-    this.player.setScale(1);
-    this.player.depth = 1;
+	this.player = this.add.sprite(0, 0, 'player');
+	this.player.setPosition(20, 180);
+	this.player.setScale(1);
+	this.player.depth = 1;
 
 
 
 	// goal
-    this.weapon = this.add.sprite(0, 0, 'weapon');
-    //set position
-    this.weapon.setPosition(620, 180);
-    this.weapon.depth = 1;
+	this.weapon = this.add.sprite(0, 0, 'weapon');
+	//set position
+	this.weapon.setPosition(620, 180);
+	this.weapon.depth = 1;
 
 	// enemy group
 	this.enemies = this.add.group({
@@ -62,7 +62,7 @@ gameScene.create = function() {
 	// set flipX, and speed
 	Phaser.Actions.Call(
 		this.enemies.getChildren(),
-		function(enemy) {
+		function (enemy) {
 			// flip enemy
 			enemy.flipX = true;
 
@@ -78,7 +78,7 @@ gameScene.create = function() {
 };
 
 // this is called up to 60 times per second
-gameScene.update = function() {
+gameScene.update = function () {
 	// check for active input (left click / touch)
 	if (this.input.activePointer.isDown) {
 		// player walks
@@ -131,9 +131,10 @@ gameScene.update = function() {
 let config = {
 	type: Phaser.AUTO, // Phaser will use WebGL if available, if not it will use Canvas
 	width: 640,
-	height: 350,
+	height: 258,
 	scene: gameScene
 };
 
 // create a new game, pass the configuration
 let game = new Phaser.Game(config);
+
