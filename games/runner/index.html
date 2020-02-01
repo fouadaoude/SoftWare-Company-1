@@ -6,15 +6,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Runner</title>
-
     <style>
-        /* Disables anti-aliasing */
-        canvas {
-            image-rendering: -moz-crisp-edges;
-            image-rendering: -webkit-crisp-edges;
-            image-rendering: pixelated;
-            image-rendering: crisp-edges;
-            width: 100%;
+        body {
+            margin: 0;
+            padding: 0;
         }
     </style>
     <link rel="stylesheet" href="../../style.css">
@@ -40,14 +35,14 @@
     </div>
 
     <!-- Game Window -->
-    <div class="game-window">
-        <div class="row">
-            <div class="col-12">
-                <script src="phaser.js"></script>
-                <script src="game.js"></script>
-            </div>
-        </div>
+    <script src="phaser.js"></script>
+    <div id="gameWin">
+        <script src="game.js"></script>
     </div>
+
+
+
+
 
 
 

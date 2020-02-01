@@ -1,61 +1,70 @@
-// create a new scene
-let gameScene = new Phaser.Scene("Game");
+// set the configuration of the game
+var config = {
+	type: Phaser.CANVAS,
+	antialias: false,
+	width: window.innerWidth,
+	height: window.innerHeight,
+	physics: {
+		default: 'arcade',
+		arcade: {
+			gravity: { y: 300 },
+			debug: false
+		}
+	},
+	scale: {
+		// mode: Phaser.Scale.FILL
+	},
+	scene: {
+		preload: preload,
+		create: create,
+		update: update,
+	}
 
-// initiate scene parameters
-gameScene.init = function () {
-	// player speed
-	this.playerSpeed = 3;
-
-	// enemy speed
-	this.enemyMinSpeed = 2;
-	this.enemyMaxSpeed = 4.5;
-
-	// boundaries
-	this.enemyMinY = 80;
-	this.enemyMaxY = 280;
 };
 
+// create a new game, pass the configuration
+var game = new Phaser.Game(config);
+
+// initiate scene parameters
+var playerSpeed = 3;
+
+// enemy speed
+var enemyMinSpeed = 2;
+var enemyMaxSpeed = 4.5;
+
+// boundaries
+var enemyMinY = 80;
+var enemyMaxY = 280;
+
 // load assets
-gameScene.preload = function () {
+function preload() {
 	// load images
 	this.load.image("background", "background.png");
 	this.load.image("player", "player.png");
 	this.load.image("enemy", "enemy.png");
 	this.load.image("weapon", "weapon.png");
-};
+}
 
 // called once after the preload ends
-gameScene.create = function () {
-	// create bg sprite
-	let bg = this.add.sprite(0, 0, "background");
-	bg.setPosition(320, 150);
-	bg.setScale(2.8);
+function create() {
+	// // create bg image
+	// let bg = this.add.sprite(300, 400, "background");
 
-	// create the player
-	this.player = this.add.sprite(0, 0, 'player');
-	this.player.setPosition(20, 180);
-	this.player.setScale(1);
-	this.player.depth = 1;
+
+	//create the player
+
 
 
 
 	// goal
 	this.weapon = this.add.sprite(0, 0, 'weapon');
 	//set position
+	this.weapon.setScale(3);
 	this.weapon.setPosition(620, 180);
 	this.weapon.depth = 1;
 
 	// enemy group
-	this.enemies = this.add.group({
-		key: "enemy",
-		repeat: 5,
-		setXY: {
-			x: 90,
-			y: 100,
-			stepX: 80,
-			stepY: 20
-		}
-	});
+
 
 
 
@@ -78,7 +87,7 @@ gameScene.create = function () {
 };
 
 // this is called up to 60 times per second
-gameScene.update = function () {
+function update() {
 	// check for active input (left click / touch)
 	if (this.input.activePointer.isDown) {
 		// player walks
@@ -92,9 +101,8 @@ gameScene.update = function () {
 	if (Phaser.Geom.Intersects.RectangleToRectangle(playerRect, treasureRect)) {
 		alert("YOU DID IT!! YOU WON!!!");
 
-		// restart the Scene
-		this.scene.restart();
-		return;
+		//ENDS GAME
+		return this.gameOver();
 	}
 
 	// get enemies
@@ -120,21 +128,17 @@ gameScene.update = function () {
 		if (Phaser.Geom.Intersects.RectangleToRectangle(playerRect, enemyRect)) {
 			console.log("Game over!");
 
-			// restart the Scene
-			this.scene.restart();
-			return;
+			//ENDS GAME
+			return this.gameOver();
 		}
 	}
 };
 
-// set the configuration of the game
-let config = {
-	type: Phaser.AUTO, // Phaser will use WebGL if available, if not it will use Canvas
-	width: 640,
-	height: 258,
-	scene: gameScene
-};
+gameScene.gameOver = function () {
+	// restart the Scene
+	this.scene.restart();
 
-// create a new game, pass the configuration
-let game = new Phaser.Game(config);
+}
+
+
 

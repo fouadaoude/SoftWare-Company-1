@@ -30,14 +30,27 @@
     <br><br>
 
     <!-- Contact FORM -->
-    <div class="contact-form">
         <div class="row">
             <div class="col-12">
-                Email: <input type="email" name="" id="">
-                Name: <input type="text">
+                <div class="contact-form">
+                    <form action="" method="POST">
+                        <div class="name-field">
+                            <h3>Name:</h3><input name="name" type="text" size="55" placeholder="Your Name" required>
+                            <h3>Email:</h3> <input name ="email" type="email" size="55" placeholder="Your Email" required>
+                        </div>
+                        <br>
+                        <div class="contact-text">
+                            <textarea name="message" cols="51" rows="10" required></textarea>
+                        </div>
+                        <br>
+                        <div class="submit-button">
+                            <input type="submit">
+                        </div>
+                    </form>
+                </div>
+                
             </div>
         </div>
-    </div>
 
 
     <!-- Here -->
@@ -50,9 +63,8 @@
         </div>
         <div class="footerOptions">
             <ul>
-                <li>Live Chat Room?</li>
-                <li>Forum?</li>
-                <li>Random Image Board</li>
+                <li>CHAT</li>
+                <li>FORUM</li>
             </ul>
         </div>
 

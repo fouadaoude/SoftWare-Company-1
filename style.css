@@ -15,23 +15,45 @@ body {
     margin: 0px;
 }
 
-.gameButtons {
-    display: block;
+.defButton {
     text-align: center;
 }
-.gameButtons button {
-    background-color: #000000;
-    font-size: larger;
-    font-family: bit, "sans-serif";
-    text-decoration: none;
-    color: #00FF33;
-    border: 1px solid #00FF33;
-    padding: 12px;
+
+button.defaultButton {
+    border: 2px solid #00FF33;
+    background-color: #1d1d1d;
+    font-weight: bold;
+    font-family: 'bit', monospace;
+    /* border-radius: 7px; */
+    color: white;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
 }
 
-.gameButtons button a {
-    color: #00FF33;
-    text-decoration: none;
+button.defaultButton:hover {
+    background-color: black;
+    /* border-radius: 7px; */
+    border: 2px solid rgb(235, 202, 14);
+    color: yellow;
+}
+
+.name-field h3 {
+    margin: 10px;
+    padding: 0;
+    text-align: center;
+}
+.contact-form {
+    display: block;
+    margin: auto;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    background-image: url("background.png");
 }
 
 
@@ -64,33 +86,7 @@ body {
 .col-11{width: 91.66%;}
 .col-12{width: 100%;}
 
-.defButton {
-    text-align: center;
-}
 
-button.defaultButton {
-    border: 2px solid rgb(0, 13, 255);
-    background-color: rgb(18, 26, 184);
-    font-weight: bold;
-    font-family: 'play', monospace;
-    border-radius: 7px;
-    color: white;
-    font-size: 16px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    padding-top: 3px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 20px;
-}
-
-button.defaultButton:hover {
-    background-color: rgb(0, 55, 255);
-    border-radius: 7px;
-    border: 2px solid rgb(235, 202, 14);
-    color: yellow;
-}
 
 
 
@@ -144,8 +140,6 @@ button.defaultButton:hover {
     border: 1px solid #00FF33;
 }
 
-
-
 #sticky-footer {
     position: fixed;
     left: 0px;
@@ -184,13 +178,17 @@ footer h3 {
     text-align: center;
 }
 
-/* #############Games Area############## */
+/* #############Custom Styles############## */
 
 .col-4 {
     margin: 10px;
     border: 1px solid #00FF33;
     border-radius: 7px;
     padding: 20px;
+}
+
+.contact-form {
+    text-align: center;
 }
 
 .row img {
