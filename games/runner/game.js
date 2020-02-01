@@ -1,18 +1,16 @@
 // set the configuration of the game
 var config = {
+	parent: 'gameWin',
+	width: window.innerWidth,
+	height: window.innerHeight - 100,
 	type: Phaser.CANVAS,
 	antialias: false,
-	width: window.innerWidth,
-	height: window.innerHeight,
 	physics: {
 		default: 'arcade',
 		arcade: {
 			gravity: { y: 300 },
 			debug: false
 		}
-	},
-	scale: {
-		// mode: Phaser.Scale.FILL
 	},
 	scene: {
 		preload: preload,
@@ -39,16 +37,16 @@ var enemyMaxY = 280;
 // load assets
 function preload() {
 	// load images
-	this.load.image("background", "background.png");
-	this.load.image("player", "player.png");
-	this.load.image("enemy", "enemy.png");
-	this.load.image("weapon", "weapon.png");
+	game.load.image("background", "background.png");
+	game.load.image("player", "player.png");
+	game.load.image("enemy", "enemy.png");
+	game.load.image("weapon", "weapon.png");
 }
 
 // called once after the preload ends
 function create() {
-	// // create bg image
-	// let bg = this.add.sprite(300, 400, "background");
+	// create bg image
+	let bg = this.add.sprite(300, 400, "background");
 
 
 	//create the player
@@ -57,11 +55,10 @@ function create() {
 
 
 	// goal
-	this.weapon = this.add.sprite(0, 0, 'weapon');
+	game.weapon = this.add.sprite(0, 0, 'weapon');
 	//set position
-	this.weapon.setScale(3);
-	this.weapon.setPosition(620, 180);
-	this.weapon.depth = 1;
+	game.weapon.setScale(3);
+	game.weapon.setPosition(620, 180);
 
 	// enemy group
 
